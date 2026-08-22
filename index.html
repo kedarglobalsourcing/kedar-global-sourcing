@@ -1,13 +1,17 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Kedar Global Sourcing — international sourcing and trade from India." />
-  <title>Kedar Global Sourcing</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Kedar Global Sourcing connects international buyers with quality Indian food ingredients including dehydrated onion, garlic and powders.">
+  <meta name="theme-color" content="#081d3b">
+
+  <title>Kedar Global Sourcing | Connecting Markets. Delivering Value.</title>
+
   <style>
     :root{
       --navy:#081d3b;
+      --navy2:#102b55;
       --gold:#c8922f;
       --gold2:#e0b45b;
       --ink:#172033;
@@ -15,240 +19,1078 @@
       --paper:#fbfaf7;
       --white:#ffffff;
       --line:#e9e5dc;
-      --green:#264d3b;
     }
+
     *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
+
+    html{
+      scroll-behavior:smooth;
+      scroll-padding-top:90px;
+    }
+
     body{
       margin:0;
-      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,
+                  BlinkMacSystemFont,"Segoe UI",sans-serif;
       color:var(--ink);
       background:var(--white);
-      line-height:1.6;
+      line-height:1.65;
     }
+
     a{text-decoration:none;color:inherit}
     img{max-width:100%;display:block}
-    .wrap{width:min(1160px,92%);margin:auto}
+    button{font:inherit}
+
+    .wrap{
+      width:min(1160px,92%);
+      margin:auto;
+    }
+
+    /* HEADER */
+
     header{
-      position:sticky;top:0;z-index:50;
-      background:rgba(255,255,255,.94);
-      backdrop-filter:blur(10px);
+      position:sticky;
+      top:0;
+      z-index:100;
+      background:rgba(255,255,255,.96);
+      backdrop-filter:blur(12px);
       border-bottom:1px solid var(--line);
     }
-    .nav{display:flex;align-items:center;justify-content:space-between;min-height:78px;gap:24px}
-    .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.08em;color:var(--navy)}
-    .brand img{width:56px;height:56px;object-fit:contain;border-radius:50%}
-    .brand small{display:block;font-size:.69rem;letter-spacing:.19em;color:var(--gold);font-weight:700;margin-top:2px}
-    .links{display:flex;align-items:center;gap:26px;font-weight:650;font-size:.94rem}
-    .links a:hover{color:var(--gold)}
+
+    .nav{
+      min-height:82px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:13px;
+      color:var(--navy);
+      font-weight:800;
+      letter-spacing:.08em;
+      flex-shrink:0;
+    }
+
+    .brand img{
+      width:64px;
+      height:64px;
+      object-fit:contain;
+      border-radius:50%;
+    }
+
+    .brand-name{
+      line-height:1.2;
+    }
+
+    .brand-name strong{
+      display:block;
+      font-size:.96rem;
+    }
+
+    .brand-name small{
+      display:block;
+      color:var(--gold);
+      font-size:.63rem;
+      letter-spacing:.18em;
+      margin-top:4px;
+    }
+
+    .links{
+      display:flex;
+      align-items:center;
+      gap:27px;
+      font-size:.92rem;
+      font-weight:700;
+    }
+
+    .links > a:not(.btn):hover{
+      color:var(--gold);
+    }
+
     .btn{
-      display:inline-flex;align-items:center;justify-content:center;
-      padding:13px 20px;border-radius:999px;font-weight:750;
-      transition:.2s ease;border:1px solid transparent;
-    }
-    .btn-primary{background:var(--navy);color:white}
-    .btn-primary:hover{transform:translateY(-1px);background:#102b55}
-    .btn-outline{border-color:var(--gold);color:var(--navy);background:#fff}
-    .hero{
-      background:
-        radial-gradient(circle at 82% 18%,rgba(200,146,47,.14),transparent 27%),
-        linear-gradient(135deg,#fff 0%,#fbfaf7 100%);
-      padding:88px 0 72px;
-      overflow:hidden;
-    }
-    .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;align-items:center;gap:64px}
-    .eyebrow{color:var(--gold);font-weight:800;letter-spacing:.17em;text-transform:uppercase;font-size:.78rem}
-    h1{font-family:Georgia,"Times New Roman",serif;color:var(--navy);font-size:clamp(3.2rem,7vw,6.4rem);line-height:.92;margin:14px 0 18px;letter-spacing:.015em}
-    h1 span{display:block;font-family:Inter,system-ui,sans-serif;font-size:.21em;letter-spacing:.29em;color:var(--gold);margin-top:18px}
-    .lead{font-size:1.12rem;color:#495469;max-width:690px}
-    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
-    .hero-card{
-      background:white;border:1px solid var(--line);border-radius:28px;padding:28px;
-      box-shadow:0 24px 60px rgba(8,29,59,.10);
-    }
-    .hero-card img{width:min(430px,100%);margin:auto;border-radius:22px}
-    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}
-    .stat{padding:16px;border:1px solid var(--line);border-radius:16px;background:var(--paper)}
-    .stat strong{display:block;color:var(--navy);font-size:1rem}
-    .stat span{font-size:.82rem;color:var(--muted)}
-    section{padding:78px 0}
-    .section-kicker{font-weight:800;color:var(--gold);letter-spacing:.15em;text-transform:uppercase;font-size:.75rem}
-    h2{font-family:Georgia,"Times New Roman",serif;color:var(--navy);font-size:clamp(2rem,4vw,3.4rem);line-height:1.08;margin:10px 0 18px}
-    .intro{max-width:760px;color:var(--muted);font-size:1.05rem}
-    .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:34px}
-    .card{
-      border:1px solid var(--line);border-radius:22px;padding:24px;background:#fff;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:13px 21px;
+      border-radius:999px;
+      border:1px solid transparent;
+      font-weight:750;
+      cursor:pointer;
       transition:.2s ease;
     }
-    .card:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(8,29,59,.08)}
-    .icon{width:44px;height:44px;border-radius:12px;background:#f6efe1;color:var(--gold);display:grid;place-items:center;font-weight:900;margin-bottom:18px}
-    .card h3{margin:0 0 8px;color:var(--navy);font-size:1.05rem}
-    .card p{margin:0;color:var(--muted);font-size:.94rem}
-    .band{background:var(--navy);color:white}
-    .band h2{color:white}
-    .band .intro{color:#d9e0eb}
-    .process{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:34px}
-    .step{padding:22px;border:1px solid rgba(255,255,255,.16);border-radius:18px;background:rgba(255,255,255,.05)}
-    .step b{display:block;color:var(--gold2);font-size:.78rem;letter-spacing:.12em;margin-bottom:10px}
-    .step h3{font-size:1rem;margin:0 0 8px}
-    .step p{color:#cdd6e3;font-size:.88rem;margin:0}
-    .two{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
-    .market-list{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
-    .pill{padding:10px 14px;border-radius:999px;background:var(--paper);border:1px solid var(--line);font-weight:700;color:var(--navy)}
+
+    .btn-primary{
+      background:var(--navy);
+      color:white;
+    }
+
+    .btn-primary:hover{
+      background:var(--navy2);
+      transform:translateY(-1px);
+    }
+
+    .btn-outline{
+      border-color:var(--gold);
+      color:var(--navy);
+      background:white;
+    }
+
+    .btn-outline:hover{
+      background:#fbf6ec;
+    }
+
+    .hamburger{
+      display:none;
+      border:0;
+      background:none;
+      padding:8px;
+      cursor:pointer;
+    }
+
+    .hamburger span{
+      display:block;
+      width:25px;
+      height:2px;
+      background:var(--navy);
+      margin:5px 0;
+    }
+
+    .mobile-menu{
+      display:none;
+    }
+
+    /* HERO */
+
+    .hero{
+      padding:82px 0 76px;
+      overflow:hidden;
+      background:
+        radial-gradient(circle at 82% 20%,
+        rgba(200,146,47,.16),transparent 28%),
+        linear-gradient(135deg,#fff 0%,#fbfaf7 100%);
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.08fr .92fr;
+      gap:64px;
+      align-items:center;
+    }
+
+    .eyebrow,
+    .section-kicker{
+      color:var(--gold);
+      font-weight:850;
+      letter-spacing:.17em;
+      text-transform:uppercase;
+      font-size:.76rem;
+    }
+
+    h1{
+      font-family:Georgia,"Times New Roman",serif;
+      color:var(--navy);
+      font-size:clamp(3.6rem,7vw,6.4rem);
+      line-height:.92;
+      margin:14px 0 19px;
+      letter-spacing:.015em;
+    }
+
+    h1 span{
+      display:block;
+      font-family:Inter,system-ui,sans-serif;
+      font-size:.20em;
+      letter-spacing:.29em;
+      color:var(--gold);
+      margin-top:20px;
+    }
+
+    .lead{
+      font-size:1.1rem;
+      color:#4d586b;
+      max-width:680px;
+    }
+
+    .lead strong{
+      color:#3d4658;
+    }
+
+    .actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:30px;
+    }
+
+    .hero-card{
+      background:white;
+      border:1px solid var(--line);
+      border-radius:30px;
+      padding:22px;
+      box-shadow:0 25px 60px rgba(8,29,59,.11);
+      max-width:500px;
+      margin:auto;
+    }
+
+    .hero-card img{
+      width:100%;
+      border-radius:22px;
+    }
+
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
+      margin-top:25px;
+    }
+
+    .stat{
+      padding:17px;
+      border:1px solid var(--line);
+      border-radius:17px;
+      background:rgba(251,250,247,.85);
+    }
+
+    .stat strong{
+      display:block;
+      color:var(--navy);
+      font-size:.96rem;
+    }
+
+    .stat span{
+      display:block;
+      color:var(--muted);
+      font-size:.79rem;
+      margin-top:3px;
+    }
+
+    /* SECTIONS */
+
+    section{
+      padding:82px 0;
+    }
+
+    h2{
+      font-family:Georgia,"Times New Roman",serif;
+      color:var(--navy);
+      font-size:clamp(2rem,4vw,3.35rem);
+      line-height:1.08;
+      margin:10px 0 18px;
+    }
+
+    .intro{
+      max-width:790px;
+      color:var(--muted);
+      font-size:1.03rem;
+    }
+
+    /* PRODUCTS */
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+      margin-top:36px;
+    }
+
+    .card{
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:25px;
+      background:white;
+      transition:.2s ease;
+    }
+
+    .card:hover{
+      transform:translateY(-4px);
+      box-shadow:0 16px 38px rgba(8,29,59,.08);
+    }
+
+    .icon{
+      width:45px;
+      height:45px;
+      border-radius:12px;
+      background:#f6efe1;
+      color:var(--gold);
+      display:grid;
+      place-items:center;
+      font-weight:900;
+      margin-bottom:18px;
+    }
+
+    .card h3{
+      margin:0 0 8px;
+      color:var(--navy);
+      font-size:1.05rem;
+    }
+
+    .card p{
+      margin:0;
+      color:var(--muted);
+      font-size:.93rem;
+    }
+
+    /* ABOUT */
+
+    .paper{
+      background:var(--paper);
+    }
+
+    .two{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:50px;
+      align-items:start;
+    }
+
     .quote{
       background:linear-gradient(135deg,#f8f1e5,#fff);
-      border:1px solid #ead8b7;border-radius:28px;padding:34px;
+      border:1px solid #ead8b7;
+      border-radius:28px;
+      padding:34px;
     }
-    .quote p{color:var(--muted)}
-    .quote .contact-row{margin-top:18px;padding-top:18px;border-top:1px solid #e8dcc8}
-    footer{background:#06162d;color:#d9e0ea;padding:36px 0}
-    .foot{display:flex;justify-content:space-between;gap:24px;align-items:center;flex-wrap:wrap}
-    .foot strong{color:white}
-    .foot small{color:#9eabba}
-    .menu{display:none}
+
+    .quote-title{
+      color:var(--navy);
+      font-size:1.22rem;
+      font-weight:800;
+    }
+
+    .quote p{
+      color:var(--muted);
+    }
+
+    .contact-row{
+      margin-top:18px;
+      padding-top:18px;
+      border-top:1px solid #e8dcc8;
+    }
+
+    /* PROCESS */
+
+    .band{
+      background:var(--navy);
+      color:white;
+    }
+
+    .band h2{
+      color:white;
+    }
+
+    .band .intro{
+      color:#d7dfeb;
+    }
+
+    .process{
+      display:grid;
+      grid-template-columns:repeat(5,1fr);
+      gap:14px;
+      margin-top:36px;
+    }
+
+    .step{
+      padding:23px;
+      border:1px solid rgba(255,255,255,.16);
+      border-radius:19px;
+      background:rgba(255,255,255,.05);
+    }
+
+    .step b{
+      display:block;
+      color:var(--gold2);
+      font-size:.78rem;
+      letter-spacing:.12em;
+      margin-bottom:10px;
+    }
+
+    .step h3{
+      font-size:1rem;
+      margin:0 0 8px;
+    }
+
+    .step p{
+      margin:0;
+      color:#cdd6e3;
+      font-size:.87rem;
+    }
+
+    /* MARKETS */
+
+    .market-list{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:24px;
+    }
+
+    .pill{
+      padding:10px 15px;
+      border-radius:999px;
+      background:var(--paper);
+      border:1px solid var(--line);
+      font-weight:700;
+      color:var(--navy);
+    }
+
+    /* CONTACT */
+
+    .contact-email{
+      color:var(--navy);
+      font-weight:800;
+    }
+
+    /* FOOTER */
+
+    footer{
+      background:#06162d;
+      color:#d9e0ea;
+      padding:42px 0;
+    }
+
+    .foot{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:24px;
+    }
+
+    .footer-brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
+
+    .footer-brand img{
+      width:58px;
+      height:58px;
+      border-radius:50%;
+    }
+
+    .foot strong{
+      color:white;
+    }
+
+    .foot small{
+      color:#9eabba;
+    }
+
+    /* TABLET */
+
     @media(max-width:900px){
-      .hero-grid,.two{grid-template-columns:1fr}
-      .hero-card{max-width:560px;margin:auto}
-      .cards{grid-template-columns:repeat(2,1fr)}
-      .process{grid-template-columns:repeat(2,1fr)}
-      .links{display:none}
-      .menu{display:block;font-weight:800;color:var(--navy)}
+
+      .hero-grid,
+      .two{
+        grid-template-columns:1fr;
+      }
+
+      .hero-grid{
+        gap:42px;
+      }
+
+      .cards{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .process{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .links{
+        display:none;
+      }
+
+      .hamburger{
+        display:block;
+      }
+
+      .mobile-menu{
+        position:absolute;
+        top:82px;
+        left:0;
+        right:0;
+        background:white;
+        border-bottom:1px solid var(--line);
+        padding:18px 4%;
+        box-shadow:0 12px 25px rgba(8,29,59,.08);
+      }
+
+      .mobile-menu.open{
+        display:block;
+      }
+
+      .mobile-menu a{
+        display:block;
+        padding:13px 5px;
+        color:var(--navy);
+        font-weight:700;
+        border-bottom:1px solid #f0eee9;
+      }
+
+      .mobile-menu .btn{
+        display:flex;
+        margin-top:12px;
+        color:white;
+      }
+
+      .hero-card{
+        max-width:470px;
+      }
     }
+
+    /* MOBILE */
+
     @media(max-width:560px){
-      .hero{padding-top:58px}
-      .cards,.stats,.process{grid-template-columns:1fr}
-      h1{font-size:3.4rem}
-      .brand span{font-size:.83rem}
+
+      .wrap{
+        width:min(92%,1160px);
+      }
+
+      .nav{
+        min-height:74px;
+      }
+
+      .brand img{
+        width:52px;
+        height:52px;
+      }
+
+      .brand-name strong{
+        font-size:.83rem;
+      }
+
+      .brand-name small{
+        font-size:.54rem;
+      }
+
+      .mobile-menu{
+        top:74px;
+      }
+
+      .hero{
+        padding:52px 0 58px;
+      }
+
+      .hero-grid{
+        gap:36px;
+      }
+
+      h1{
+        font-size:3.45rem;
+      }
+
+      h1 span{
+        font-size:.19em;
+        letter-spacing:.24em;
+      }
+
+      .lead{
+        font-size:1rem;
+      }
+
+      .actions .btn{
+        flex:1;
+        min-width:145px;
+      }
+
+      .stats{
+        grid-template-columns:1fr;
+      }
+
+      .hero-card{
+        padding:14px;
+        border-radius:24px;
+        width:100%;
+      }
+
+      section{
+        padding:62px 0;
+      }
+
+      .cards{
+        grid-template-columns:1fr;
+      }
+
+      .process{
+        grid-template-columns:1fr;
+      }
+
+      .two{
+        gap:32px;
+      }
+
+      .quote{
+        padding:25px;
+      }
+
+      .foot{
+        align-items:flex-start;
+        flex-direction:column;
+      }
     }
   </style>
 </head>
+
 <body>
-  <header>
-    <div class="wrap nav">
-      <a class="brand" href="#home">
-        <img src="kedar-logo.png" alt="Kedar Global Sourcing logo">
-        <span>KEDAR<small>GLOBAL SOURCING</small></span>
-      </a>
-      <nav class="links">
-        <a href="#about">About</a>
-        <a href="#products">Products</a>
-        <a href="#process">How We Work</a>
-        <a href="#markets">Markets</a>
-        <a class="btn btn-primary" href="#contact">Request a Quote</a>
-      </nav>
-      <a class="menu" href="#contact">Contact</a>
+
+<header>
+  <div class="wrap nav">
+
+    <a class="brand" href="#home">
+      <img src="kedar-logo.png" alt="Kedar Global Sourcing logo">
+      <div class="brand-name">
+        <strong>KEDAR</strong>
+        <small>GLOBAL SOURCING</small>
+      </div>
+    </a>
+
+    <nav class="links">
+      <a href="#about">About</a>
+      <a href="#products">Products</a>
+      <a href="#process">How We Work</a>
+      <a href="#markets">Markets</a>
+      <a class="btn btn-primary" href="#contact">Request a Quote</a>
+    </nav>
+
+    <button class="hamburger"
+            id="hamburger"
+            aria-label="Open navigation menu"
+            aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#about">About</a>
+      <a href="#products">Products</a>
+      <a href="#process">How We Work</a>
+      <a href="#markets">Markets</a>
+      <a class="btn btn-primary" href="#contact">Request a Quote</a>
     </div>
-  </header>
 
-  <main id="home">
-    <section class="hero">
-      <div class="wrap hero-grid">
-        <div>
-          <div class="eyebrow">India • International Trade & Sourcing</div>
-          <h1>KEDAR<span>GLOBAL SOURCING</span></h1>
-          <p class="lead"><strong>Connecting Markets. Delivering Value.</strong> Kedar Global Sourcing is being built as an India-based sourcing and trading partner for international buyers seeking dependable products, responsive coordination and transparent execution.</p>
-          <div class="actions">
-            <a class="btn btn-primary" href="#products">Explore Products</a>
-            <a class="btn btn-outline" href="#contact">Request a Quote</a>
+  </div>
+</header>
+
+<main id="home">
+
+  <!-- HERO -->
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+
+      <div>
+
+        <div class="eyebrow">
+          India • International Trade & Sourcing
+        </div>
+
+        <h1>
+          KEDAR
+          <span>GLOBAL SOURCING</span>
+        </h1>
+
+        <p class="lead">
+          <strong>Connecting Markets. Delivering Value.</strong>
+          We connect international buyers with reliable Indian
+          suppliers and coordinate sourcing requirements from
+          product specification through shipment readiness.
+        </p>
+
+        <div class="actions">
+          <a class="btn btn-primary" href="#products">
+            Explore Products
+          </a>
+
+          <a class="btn btn-outline" href="#contact">
+            Request a Quote
+          </a>
+        </div>
+
+        <div class="stats">
+
+          <div class="stat">
+            <strong>India-based</strong>
+            <span>Access to Indian sourcing opportunities</span>
           </div>
-          <div class="stats">
-            <div class="stat"><strong>India-based</strong><span>Sourcing network development</span></div>
-            <div class="stat"><strong>B2B focused</strong><span>International buyer requirements</span></div>
-            <div class="stat"><strong>Flexible</strong><span>Product categories can expand</span></div>
+
+          <div class="stat">
+            <strong>B2B Focused</strong>
+            <span>International buyer requirements</span>
           </div>
-        </div>
-        <div class="hero-card">
-          <img src="kedar-logo.png" alt="Kedar Global Sourcing brand mark">
-        </div>
-      </div>
-    </section>
 
-    <section id="products">
-      <div class="wrap">
-        <div class="section-kicker">Initial Product Focus</div>
-        <h2>Food ingredients sourced from India</h2>
-        <p class="intro">Our initial focus is on dehydrated food ingredients. Product specifications, origin, packaging, testing and commercial terms can be aligned with buyer requirements.</p>
-        <div class="cards">
-          <article class="card"><div class="icon">01</div><h3>Dehydrated Onion</h3><p>Flakes, chopped, minced and granulated formats subject to supplier capability.</p></article>
-          <article class="card"><div class="icon">02</div><h3>Onion Powder</h3><p>Ingredient-grade sourcing for food manufacturing, seasoning and bulk applications.</p></article>
-          <article class="card"><div class="icon">03</div><h3>Dehydrated Garlic</h3><p>Flakes, granules and other formats for commercial food applications.</p></article>
-          <article class="card"><div class="icon">04</div><h3>Garlic Powder</h3><p>Bulk sourcing with buyer-defined packaging, specifications and documentation.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section id="about" style="background:var(--paper)">
-      <div class="wrap two">
-        <div>
-          <div class="section-kicker">About Kedar</div>
-          <h2>A sourcing partner built around clarity and execution</h2>
-          <p class="intro">Kedar Global Sourcing is a newly established proprietorship in India. The business is being developed to connect overseas buyers with suitable Indian suppliers while coordinating requirements, samples, commercial communication and export readiness.</p>
-        </div>
-        <div class="quote">
-          <strong style="color:var(--navy);font-size:1.25rem">Our operating principle</strong>
-          <p>We prefer clear specifications, transparent communication and supplier selection based on the buyer's actual requirement rather than pushing a fixed catalogue.</p>
-          <div class="contact-row"><strong>Brand:</strong> Kedar Global Sourcing<br><strong>Website:</strong> kedarglobal.in</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="band" id="process">
-      <div class="wrap">
-        <div class="section-kicker">How We Work</div>
-        <h2>From requirement to shipment readiness</h2>
-        <p class="intro">The workflow is designed to reduce ambiguity before commercial commitment.</p>
-        <div class="process">
-          <div class="step"><b>01</b><h3>Requirement</h3><p>Product, specification, quantity, packaging and destination.</p></div>
-          <div class="step"><b>02</b><h3>Supplier Match</h3><p>Identify and compare suitable Indian supply options.</p></div>
-          <div class="step"><b>03</b><h3>Sample & Terms</h3><p>Coordinate samples, pricing and commercial parameters.</p></div>
-          <div class="step"><b>04</b><h3>Documentation</h3><p>Align required export and product documentation.</p></div>
-          <div class="step"><b>05</b><h3>Dispatch</h3><p>Coordinate packing, handover and shipment readiness.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="markets">
-      <div class="wrap two">
-        <div>
-          <div class="section-kicker">Target Markets</div>
-          <h2>Built for international B2B trade</h2>
-          <p class="intro">The company is being positioned for buyer outreach in key import markets. Market participation will expand as registrations, supplier qualification and logistics arrangements progress.</p>
-          <div class="market-list">
-            <span class="pill">United States</span><span class="pill">UAE</span><span class="pill">Canada</span><span class="pill">United Kingdom</span><span class="pill">European Union</span><span class="pill">Australia</span>
+          <div class="stat">
+            <strong>Requirement-led</strong>
+            <span>Sourcing based on your specifications</span>
           </div>
-        </div>
-        <div>
-          <div class="section-kicker">Why the model works</div>
-          <h2>Flexible sourcing, without product lock-in</h2>
-          <p class="intro">The brand is intentionally broad. As the supplier base develops, Kedar Global Sourcing can add other suitable Indian product categories without needing to change its core identity.</p>
+
         </div>
       </div>
-    </section>
 
-    <section id="contact" style="background:var(--paper)">
-      <div class="wrap two">
-        <div>
-          <div class="section-kicker">Request a Quote</div>
-          <h2>Tell us what you need</h2>
-          <p class="intro">For a useful sourcing request, include the product, required specification, approximate quantity, packaging preference and destination country/port.</p>
-        </div>
-        <div class="quote">
-          <strong style="color:var(--navy);font-size:1.2rem">Contact</strong>
-          <p>Business email setup is the next step. Once your <strong>@kedarglobal.in</strong> mailbox is active, replace the placeholder below with the live address.</p>
-          <div class="contact-row">
-            <strong>Website:</strong> kedarglobal.in<br>
-            <strong>Email:</strong> info@kedarglobal.in
-          </div>
-        </div>
+      <div class="hero-card">
+        <img src="kedar-logo.png"
+             alt="Kedar Global Sourcing — Connecting Markets. Delivering Value.">
       </div>
-    </section>
-  </main>
 
-  <footer>
-    <div class="wrap foot">
-      <div><strong>Kedar Global Sourcing</strong><br><small>Connecting Markets. Delivering Value.</small></div>
-      <small>© 2026 Kedar Global Sourcing. All rights reserved.</small>
     </div>
-  </footer>
+  </section>
+
+  <!-- PRODUCTS -->
+
+  <section id="products">
+    <div class="wrap">
+
+      <div class="section-kicker">
+        Product Focus
+      </div>
+
+      <h2>
+        Food ingredients sourced from India
+      </h2>
+
+      <p class="intro">
+        Our initial product portfolio focuses on dehydrated onion
+        and garlic ingredients for international B2B buyers.
+        Specifications, packaging and documentation can be aligned
+        with individual buyer requirements.
+      </p>
+
+      <div class="cards">
+
+        <article class="card">
+          <div class="icon">01</div>
+          <h3>Dehydrated Onion</h3>
+          <p>
+            Flakes, chopped, minced and granulated formats for
+            food processing and commercial applications.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="icon">02</div>
+          <h3>Onion Powder</h3>
+          <p>
+            Ingredient-grade onion powder for seasonings,
+            food manufacturing and bulk applications.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="icon">03</div>
+          <h3>Dehydrated Garlic</h3>
+          <p>
+            Garlic flakes, granules and other formats for
+            commercial food applications.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="icon">04</div>
+          <h3>Garlic Powder</h3>
+          <p>
+            Bulk garlic powder sourced according to buyer-defined
+            specifications and packaging requirements.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+
+  <section id="about" class="paper">
+
+    <div class="wrap two">
+
+      <div>
+
+        <div class="section-kicker">
+          About Kedar
+        </div>
+
+        <h2>
+          Your sourcing bridge to India
+        </h2>
+
+        <p class="intro">
+          Kedar Global Sourcing is an India-based sourcing and
+          international trade business focused on connecting
+          overseas buyers with suitable Indian manufacturers
+          and suppliers.
+        </p>
+
+        <p class="intro">
+          We work from the buyer's requirement — including
+          specification, quantity, packaging and destination —
+          and coordinate supplier identification, commercial
+          communication, samples and export readiness.
+        </p>
+
+      </div>
+
+      <div class="quote">
+
+        <div class="quote-title">
+          Our operating principle
+        </div>
+
+        <p>
+          Good sourcing starts with understanding the buyer's
+          requirement. We focus on clear specifications,
+          transparent communication and suitable supplier
+          selection rather than a one-size-fits-all catalogue.
+        </p>
+
+        <div class="contact-row">
+          <strong>Our commitment</strong><br>
+          Clear communication • Responsive coordination •
+          Requirement-led sourcing
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+
+  <section class="band" id="process">
+
+    <div class="wrap">
+
+      <div class="section-kicker">
+        How We Work
+      </div>
+
+      <h2>
+        From requirement to shipment readiness
+      </h2>
+
+      <p class="intro">
+        A structured sourcing process helps reduce ambiguity,
+        improve communication and align expectations before
+        commercial commitment.
+      </p>
+
+      <div class="process">
+
+        <div class="step">
+          <b>01</b>
+          <h3>Requirement</h3>
+          <p>
+            Share product, specification, quantity,
+            packaging and destination.
+          </p>
+        </div>
+
+        <div class="step">
+          <b>02</b>
+          <h3>Supplier Match</h3>
+          <p>
+            We identify suitable Indian sourcing options
+            for your requirement.
+          </p>
+        </div>
+
+        <div class="step">
+          <b>03</b>
+          <h3>Sample & Quote</h3>
+          <p>
+            Coordinate samples, pricing and relevant
+            commercial terms.
+          </p>
+        </div>
+
+        <div class="step">
+          <b>04</b>
+          <h3>Documentation</h3>
+          <p>
+            Align product and export documentation
+            required for the order.
+          </p>
+        </div>
+
+        <div class="step">
+          <b>05</b>
+          <h3>Shipment</h3>
+          <p>
+            Coordinate packing and shipment readiness
+            for dispatch.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MARKETS -->
+
+  <section id="markets">
+
+    <div class="wrap two">
+
+      <div>
+
+        <div class="section-kicker">
+          International Markets
+        </div>
+
+        <h2>
+          Sourcing from India for global buyers
+        </h2>
+
+        <p class="intro">
+          We are building relationships with importers,
+          distributors, food manufacturers and B2B buyers
+          across major international markets.
+        </p>
+
+        <div class="market-list">
+          <span class="pill">United States</span>
+          <span class="pill">UAE</span>
+          <span class="pill">Canada</span>
+          <span class="pill">United Kingdom</span>
+          <span class="pill">Europe</span>
+          <span class="pill">Australia</span>
+        </div>
+
+      </div>
+
+      <div>
+
+        <div class="section-kicker">
+          Why Kedar
+        </div>
+
+        <h2>
+          Sourcing built around your requirement
+        </h2>
+
+        <p class="intro">
+          Rather than limiting buyers to a fixed catalogue,
+          our sourcing model begins with what you need.
+          This allows us to evaluate suitable supply options
+          based on product specifications, quantities,
+          packaging and commercial requirements.
+        </p>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+
+  <section id="contact" class="paper">
+
+    <div class="wrap two">
+
+      <div>
+
+        <div class="section-kicker">
+          Request a Quote
+        </div>
+
+        <h2>
+          Tell us what you're looking for
+        </h2>
+
+        <p class="intro">
+          Send us your sourcing requirement and include as much
+          information as possible about the product, specification,
+          approximate quantity, packaging and destination.
+        </p>
+
+        <div class="actions">
+          <a class="btn btn-primary"
+             href="mailto:info@kedarglobal.in?subject=Sourcing%20Enquiry">
+            Send an Enquiry
+          </a>
+        </div>
+
+      </div>
+
+      <div class="quote">
+
+        <div class="quote-title">
+          For faster quotations, please include
+        </div>
+
+        <p>
+          ✓ Product name<br>
+          ✓ Required specification / grade<br>
+          ✓ Approximate quantity<br>
+          ✓ Packaging requirement<br>
+          ✓ Destination country / port
+        </p>
+
+        <div class="contact-row">
+
+          <strong>Website</strong><br>
+          kedarglobal.in
+
+          <br><br>
+
+          <strong>Email</strong><br>
+          <a class="contact-email"
+             href="mailto:info@kedarglobal.in">
+            info@kedarglobal.in
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+
+  <div class="wrap foot">
+
+    <div class="footer-brand">
+
+      <img src="kedar-logo.png"
+           alt="Kedar Global Sourcing">
+
+      <div>
+        <strong>Kedar Global Sourcing</strong><br>
+        <small>Connecting Markets. Delivering Value.</small>
+      </div>
+
+    </div>
+
+    <small>
+      © 2026 Kedar Global Sourcing. All rights reserved.
+    </small>
+
+  </div>
+
+</footer>
+
+<script>
+  const hamburger = document.getElementById("hamburger");
+  const mobileMenu = document.getElementById("mobileMenu");
+
+  hamburger.addEventListener("click", function () {
+    const open = mobileMenu.classList.toggle("open");
+    hamburger.setAttribute("aria-expanded", open);
+  });
+
+  document.querySelectorAll("#mobileMenu a").forEach(function(link){
+    link.addEventListener("click", function(){
+      mobileMenu.classList.remove("open");
+      hamburger.setAttribute("aria-expanded", "false");
+    });
+  });
+</script>
+
 </body>
 </html>
