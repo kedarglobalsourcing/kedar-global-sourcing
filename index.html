@@ -477,11 +477,150 @@
     .foot small{
       color:#9eabba;
     }
+.contact-section{
+  background:var(--paper);
+}
 
+.contact-heading{
+  max-width:760px;
+  margin-bottom:34px;
+}
+
+.quote-form-wrap{
+  display:grid;
+  grid-template-columns:1.55fr .75fr;
+  gap:28px;
+  align-items:start;
+}
+
+.quote-form{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:26px;
+  padding:30px;
+  box-shadow:0 18px 45px rgba(8,29,59,.06);
+}
+
+.form-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+.form-field{
+  display:flex;
+  flex-direction:column;
+  gap:7px;
+}
+
+.form-field.full{
+  grid-column:1 / -1;
+}
+
+.form-field label{
+  font-size:.88rem;
+  font-weight:750;
+  color:var(--navy);
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea{
+  width:100%;
+  border:1px solid #d8dce3;
+  border-radius:12px;
+  padding:13px 14px;
+  font:inherit;
+  color:var(--ink);
+  background:#fff;
+  outline:none;
+  transition:.2s ease;
+}
+
+.form-field textarea{
+  resize:vertical;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus{
+  border-color:var(--gold);
+  box-shadow:0 0 0 3px rgba(200,146,47,.12);
+}
+
+.form-submit{
+  margin-top:24px;
+  display:flex;
+  align-items:center;
+  gap:18px;
+}
+
+.form-submit p{
+  margin:0;
+  color:var(--muted);
+  font-size:.82rem;
+  max-width:360px;
+}
+
+.quote-help{
+  background:var(--navy);
+  color:#fff;
+  border-radius:26px;
+  padding:30px;
+}
+
+.quote-help h3{
+  margin:8px 0 26px;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:1.7rem;
+}
+
+.help-step{
+  display:flex;
+  gap:14px;
+  padding:18px 0;
+  border-bottom:1px solid rgba(255,255,255,.14);
+}
+
+.help-step span{
+  color:var(--gold2);
+  font-weight:800;
+  font-size:.78rem;
+}
+
+.help-step strong{
+  display:block;
+  margin-bottom:4px;
+}
+
+.help-step p{
+  margin:0;
+  color:#cdd6e3;
+  font-size:.88rem;
+}
+
+.direct-contact{
+  margin-top:25px;
+  padding:18px;
+  background:rgba(255,255,255,.07);
+  border-radius:16px;
+}
+
+.direct-contact p{
+  margin:5px 0 0;
+  color:var(--gold2);
+  font-weight:700;
+}
+    
     /* TABLET */
 
+    
     @media(max-width:900px){
 
+.quote-form-wrap{
+  grid-template-columns:1fr;
+}
+      
       .hero-grid,
       .two{
         grid-template-columns:1fr;
@@ -545,6 +684,32 @@
 
     @media(max-width:560px){
 
+      .quote-form{
+  padding:20px;
+}
+
+.form-grid{
+  grid-template-columns:1fr;
+  gap:16px;
+}
+
+.form-field.full{
+  grid-column:auto;
+}
+
+.form-submit{
+  flex-direction:column;
+  align-items:stretch;
+}
+
+.form-submit .btn{
+  width:100%;
+}
+
+.quote-help{
+  padding:23px;
+}
+      
   .wrap{
     width:92%;
   }
@@ -1027,67 +1192,189 @@
 
   <!-- CONTACT -->
 
-  <section id="contact" class="paper">
+  <section id="contact" class="contact-section">
+  <div class="wrap">
+    <div class="contact-heading">
+      <div class="section-kicker">Request a Quote</div>
+      <h2>Tell us what you need</h2>
+      <p class="intro">
+        Share your sourcing requirement and we'll review the details.
+        Please provide as much information as possible so we can identify
+        suitable supply options.
+      </p>
+    </div>
 
-    <div class="wrap two">
+    <div class="quote-form-wrap">
 
-      <div>
+      <form class="quote-form" id="quoteForm">
 
-        <div class="section-kicker">
-          Request a Quote
+        <div class="form-grid">
+
+          <div class="form-field">
+            <label for="name">Your Name *</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Your full name"
+              required>
+          </div>
+
+          <div class="form-field">
+            <label for="company">Company Name *</label>
+            <input
+              type="text"
+              id="company"
+              name="company"
+              placeholder="Your company name"
+              required>
+          </div>
+
+          <div class="form-field">
+            <label for="country">Country *</label>
+            <input
+              type="text"
+              id="country"
+              name="country"
+              placeholder="e.g. United States"
+              required>
+          </div>
+
+          <div class="form-field">
+            <label for="email">Business Email *</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="name@company.com"
+              required>
+          </div>
+
+          <div class="form-field">
+            <label for="phone">Phone / WhatsApp</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="+1 123 456 7890">
+          </div>
+
+          <div class="form-field">
+            <label for="product">Product *</label>
+
+            <select id="product" name="product" required>
+              <option value="">Select a product</option>
+              <option>Dehydrated Onion</option>
+              <option>Onion Powder</option>
+              <option>Dehydrated Garlic</option>
+              <option>Garlic Powder</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label for="quantity">Required Quantity *</label>
+            <input
+              type="text"
+              id="quantity"
+              name="quantity"
+              placeholder="e.g. 5 MT"
+              required>
+          </div>
+
+          <div class="form-field">
+            <label for="packaging">Packaging Requirement</label>
+            <input
+              type="text"
+              id="packaging"
+              name="packaging"
+              placeholder="e.g. 20 kg bags">
+          </div>
+
+          <div class="form-field full">
+            <label for="destination">Destination Country / Port *</label>
+            <input
+              type="text"
+              id="destination"
+              name="destination"
+              placeholder="e.g. Dubai, UAE / Jebel Ali Port"
+              required>
+          </div>
+
+          <div class="form-field full">
+            <label for="specification">Product Specification</label>
+            <textarea
+              id="specification"
+              name="specification"
+              rows="4"
+              placeholder="Grade, size, moisture level, mesh size, certification or other required specifications"></textarea>
+          </div>
+
+          <div class="form-field full">
+            <label for="message">Additional Requirements</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              placeholder="Tell us anything else we should know about your requirement"></textarea>
+          </div>
+
         </div>
 
-        <h2>
-          Tell us what you're looking for
-        </h2>
+        <div class="form-submit">
+          <button type="submit" class="btn btn-primary">
+            Submit Request
+          </button>
 
-        <p class="intro">
-          Send us your sourcing requirement and include as much
-          information as possible about the product, specification,
-          approximate quantity, packaging and destination.
-        </p>
-
-        <div class="actions">
-          <a class="btn btn-primary"
-             href="mailto:info@kedarglobal.in?subject=Sourcing%20Enquiry">
-            Send an Enquiry
-          </a>
+          <p>
+            We'll use the information you provide only to respond to
+            your sourcing enquiry.
+          </p>
         </div>
 
-      </div>
+      </form>
 
-      <div class="quote">
+      <aside class="quote-help">
 
-        <div class="quote-title">
-          For faster quotations, please include
+        <div class="section-kicker">What happens next?</div>
+
+        <h3>From enquiry to sourcing</h3>
+
+        <div class="help-step">
+          <span>01</span>
+          <div>
+            <strong>We review your requirement</strong>
+            <p>We check the product, specification, quantity and destination.</p>
+          </div>
         </div>
 
-        <p>
-          ✓ Product name<br>
-          ✓ Required specification / grade<br>
-          ✓ Approximate quantity<br>
-          ✓ Packaging requirement<br>
-          ✓ Destination country / port
-        </p>
+        <div class="help-step">
+          <span>02</span>
+          <div>
+            <strong>We identify supply options</strong>
+            <p>Suitable Indian suppliers are evaluated against your requirement.</p>
+          </div>
+        </div>
 
-        <div class="contact-row">
+        <div class="help-step">
+          <span>03</span>
+          <div>
+            <strong>We discuss the next steps</strong>
+            <p>Specifications, samples, pricing and commercial terms can then be aligned.</p>
+          </div>
+        </div>
 
-          <strong>Website</strong><br>
-          kedarglobal.in
-
-          <br><br>
-
-          <strong>Email</strong><br>
-          <a class="contact-email"
-             href="mailto:info@kedarglobal.in">
+        <div class="direct-contact">
+          <strong>Prefer email?</strong>
+          <p>
             info@kedarglobal.in
-          </a>
-
+          </p>
         </div>
 
-      </div>
+      </aside>
 
     </div>
+  </div>
   </section>
 
 </main>
