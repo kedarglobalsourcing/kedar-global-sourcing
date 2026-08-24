@@ -872,6 +872,117 @@
     @media(max-width:900px){.product-grid,.spec-grid{grid-template-columns:1fr 1fr}}
     @media(max-width:560px){.product-grid,.spec-grid,.format-list{grid-template-columns:1fr}}
 
+
+    .section-cta{
+      margin-top:26px;
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .buyer-note{
+      margin-top:18px;
+      padding:15px 17px;
+      border-left:3px solid var(--gold);
+      background:#fbf6ec;
+      border-radius:0 14px 14px 0;
+      color:var(--muted);
+      font-size:.9rem;
+    }
+
+    .detail-table{
+      width:100%;
+      border-collapse:separate;
+      border-spacing:0;
+      margin-top:28px;
+      border:1px solid var(--line);
+      border-radius:20px;
+      overflow:hidden;
+      background:#fff;
+    }
+
+    .detail-table th,
+    .detail-table td{
+      padding:16px 18px;
+      text-align:left;
+      border-bottom:1px solid var(--line);
+      vertical-align:top;
+    }
+
+    .detail-table th{
+      width:30%;
+      color:var(--navy);
+      background:var(--paper);
+      font-size:.92rem;
+    }
+
+    .detail-table td{
+      color:var(--muted);
+      font-size:.92rem;
+    }
+
+    .detail-table tr:last-child th,
+    .detail-table tr:last-child td{
+      border-bottom:0;
+    }
+
+    .assurance-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+      margin-top:32px;
+    }
+
+    .assurance-card{
+      padding:24px;
+      border-radius:20px;
+      border:1px solid rgba(255,255,255,.16);
+      background:rgba(255,255,255,.05);
+    }
+
+    .assurance-card strong{
+      display:block;
+      color:var(--gold2);
+      margin-bottom:8px;
+      font-size:1rem;
+    }
+
+    .assurance-card p{
+      margin:0;
+      color:#cdd6e3;
+      font-size:.9rem;
+    }
+
+    .final-cta{
+      text-align:center;
+      max-width:840px;
+      margin:auto;
+    }
+
+    .final-cta .actions{
+      justify-content:center;
+    }
+
+    @media(max-width:900px){
+      .assurance-grid{grid-template-columns:1fr 1fr}
+    }
+
+    @media(max-width:560px){
+      .assurance-grid{grid-template-columns:1fr}
+      .detail-table th,
+      .detail-table td{
+        display:block;
+        width:100%;
+      }
+      .detail-table th{
+        border-bottom:0;
+        padding-bottom:6px;
+      }
+      .detail-table td{
+        padding-top:4px;
+      }
+    }
+
   </style>
   <!-- Structured Data: Organization -->
 <script type="application/ld+json">
@@ -941,7 +1052,18 @@
 <div class="product-grid">
 <article class="product-panel"><h3>Dehydrated Onion</h3><p>Suitable for food manufacturing, seasoning blends, sauces, soups, ready meals and other commercial food applications.</p><div class="format-list"><div class="format-item">Flakes</div><div class="format-item">Chopped</div><div class="format-item">Minced</div><div class="format-item">Granules</div></div></article>
 <article class="product-panel"><h3>Onion Powder</h3><p>Ingredient-grade onion powder for seasoning, snack, sauce, ready-to-eat and food manufacturing applications.</p><div class="format-list"><div class="format-item">Fine Powder</div><div class="format-item">Buyer-defined Mesh</div><div class="format-item">Bulk Supply</div><div class="format-item">Custom Packaging</div></div></article>
-</div></div></section>
+</div>
+      <div class="section-cta">
+        <a class="btn btn-primary" href="index.html#contact">Request Onion Specification</a>
+        <a class="btn btn-outline" href="index.html#contact">Get a Quote</a>
+      </div>
+      <div class="buyer-note">
+        Product format, mesh/particle size, moisture, microbiological requirements,
+        packaging and documentation should be confirmed against the selected supplier
+        before an order is finalized.
+      </div>
+    </div>
+  </section>
 
 <section id="garlic" style="background:var(--paper)"><div class="wrap">
 <div class="section-kicker">Dehydrated Garlic</div>
@@ -950,7 +1072,17 @@
 <div class="product-grid">
 <article class="product-panel"><h3>Dehydrated Garlic</h3><p>Commercial garlic formats for food processing, seasoning, sauces, soups, prepared foods and ingredient use.</p><div class="format-list"><div class="format-item">Flakes</div><div class="format-item">Chopped / Minced</div><div class="format-item">Granules</div><div class="format-item">Other Supplier Formats</div></div></article>
 <article class="product-panel"><h3>Garlic Powder</h3><p>Bulk garlic powder sourced according to buyer-defined requirements for commercial food and seasoning applications.</p><div class="format-list"><div class="format-item">Fine Powder</div><div class="format-item">Buyer-defined Mesh</div><div class="format-item">Bulk Supply</div><div class="format-item">Custom Packaging</div></div></article>
-</div></div></section>
+</div>
+      <div class="section-cta">
+        <a class="btn btn-primary" href="index.html#contact">Request Garlic Specification</a>
+        <a class="btn btn-outline" href="index.html#contact">Get a Quote</a>
+      </div>
+      <div class="buyer-note">
+        Final garlic specifications depend on the selected supplier and buyer requirement.
+        We confirm applicable parameters before commercial commitment.
+      </div>
+    </div>
+  </section>
 
 <section><div class="wrap">
 <div class="section-kicker">Specification Alignment</div>
@@ -963,7 +1095,36 @@
 <div class="spec-box"><strong>Packaging</strong><span>Bulk or buyer-specified packaging subject to supplier capability.</span></div>
 <div class="spec-box"><strong>Quantity</strong><span>Required order quantity and commercial feasibility.</span></div>
 <div class="spec-box"><strong>Destination & Documentation</strong><span>Country, port and applicable order/export documentation requirements.</span></div>
-</div></div></section>
+</div>
+
+      <table class="detail-table" aria-label="Typical buyer specification requirements">
+        <tr>
+          <th>Product Format</th>
+          <td>Flakes, chopped, minced, granules or powder, according to the product and supplier capability.</td>
+        </tr>
+        <tr>
+          <th>Size / Mesh</th>
+          <td>Buyer-required particle size or mesh range where applicable.</td>
+        </tr>
+        <tr>
+          <th>Quality Parameters</th>
+          <td>Moisture, microbiological, sensory and other parameters can be checked against buyer requirements and supplier documentation.</td>
+        </tr>
+        <tr>
+          <th>Packaging</th>
+          <td>Bulk or buyer-specific packaging may be considered subject to supplier capability and commercial viability.</td>
+        </tr>
+        <tr>
+          <th>Documentation</th>
+          <td>Required test reports, certificates, declarations or export documents should be stated during enquiry so availability can be verified.</td>
+        </tr>
+        <tr>
+          <th>Destination</th>
+          <td>Country and port information helps align documentation, logistics and commercial requirements.</td>
+        </tr>
+      </table>
+    </div>
+  </section>
 
 <section class="band"><div class="wrap">
 <div class="section-kicker">Applications</div>
@@ -972,15 +1133,68 @@
 <div class="application-list"><span class="application-pill">Seasoning Blends</span><span class="application-pill">Snacks</span><span class="application-pill">Sauces</span><span class="application-pill">Soups</span><span class="application-pill">Ready Meals</span><span class="application-pill">Processed Foods</span><span class="application-pill">Food Service</span><span class="application-pill">Ingredient Manufacturing</span></div>
 </div></section>
 
+<section class="band">
+  <div class="wrap">
+    <div class="section-kicker">How We Source</div>
+    <h2>Buyer requirement first, supplier selection second</h2>
+    <p class="intro">
+      We avoid presenting supplier-specific claims as universal product specifications.
+      Instead, we match the buyer's requirement with suitable supply options and verify
+      commercial and documentation details before order confirmation.
+    </p>
+
+    <div class="assurance-grid">
+      <div class="assurance-card">
+        <strong>Requirement Review</strong>
+        <p>Product, specification, quantity, packaging and destination are clarified first.</p>
+      </div>
+      <div class="assurance-card">
+        <strong>Supplier Comparison</strong>
+        <p>Suitable Indian suppliers are evaluated against the requested parameters.</p>
+      </div>
+      <div class="assurance-card">
+        <strong>Document Verification</strong>
+        <p>Available product and compliance documents are checked with the selected supplier.</p>
+      </div>
+      <div class="assurance-card">
+        <strong>Sample Coordination</strong>
+        <p>Samples can be coordinated where required before commercial commitment.</p>
+      </div>
+      <div class="assurance-card">
+        <strong>Commercial Alignment</strong>
+        <p>Pricing, quantity, packaging and order terms are aligned before proceeding.</p>
+      </div>
+      <div class="assurance-card">
+        <strong>Shipment Readiness</strong>
+        <p>Packaging, documentation and dispatch readiness are coordinated for the agreed order.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section><div class="wrap two">
 <div><div class="section-kicker">Packaging & Commercial Requirements</div><h2>Built around the buyer's order requirement</h2><p class="intro">Packaging, labelling, quantity, shipment destination and commercial requirements can be discussed as part of the sourcing process. Availability depends on the selected supplier and confirmed order terms.</p></div>
 <div class="quote"><div class="quote-title">Quality & documentation</div><p>Required product documentation, test reports, certificates or compliance documents should be specified by the buyer at enquiry stage. We then check availability with the selected supplier rather than assuming that every supplier carries the same documentation.</p></div>
 </div></section>
 
-<section style="background:var(--paper)"><div class="wrap two">
-<div><div class="section-kicker">Need Another Product?</div><h2>Our sourcing scope can expand beyond onion and garlic</h2><p class="intro">Kedar Global Sourcing is intentionally positioned as a broader sourcing partner. If you need another product from India, share the requirement and we can review suitable sourcing possibilities.</p></div>
-<div class="quote"><div class="quote-title">Send us your requirement</div><p>Include the product, specification, approximate quantity, packaging preference and destination country or port.</p><div class="contact-row"><a class="btn btn-primary" href="index.html#contact">Request a Quote</a></div></div>
-</div></section>
+<section style="background:var(--paper)">
+  <div class="wrap">
+    <div class="final-cta">
+      <div class="section-kicker">Request a Quote</div>
+      <h2>Tell us the product and specification you need</h2>
+      <p class="intro" style="margin-left:auto;margin-right:auto;">
+        Share the product, required specification, approximate quantity, packaging
+        preference and destination country or port. We can review suitable sourcing
+        possibilities from India — including requirements beyond onion and garlic.
+      </p>
+      <div class="actions">
+        <a class="btn btn-primary" href="index.html#contact">Send Your Requirement</a>
+        <a class="btn btn-outline" href="about.html">About Kedar</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 </main>
 
 <footer>
