@@ -1191,6 +1191,7 @@
     <div class="wrap">
       <div class="rfq-layout">
         <form class="rfq-card" id="rfqForm" action="#" method="post" enctype="multipart/form-data">
+          <input type="hidden" id="enquirySource" name="enquiry_source" value="">
           <div class="section-kicker">Request for Quotation</div>
           <h2 style="margin-bottom:8px;">Buyer sourcing enquiry</h2>
           <p class="intro" style="margin-bottom:26px;">Please provide as much detail as possible so the requirement can be reviewed accurately.</p>
@@ -1275,10 +1276,44 @@
 <script>
   const rfqForm = document.getElementById('rfqForm');
   const formStatus = document.getElementById('formStatus');
+
+  // Prefill the enquiry when a visitor comes from a product or market CTA.
+  const params = new URLSearchParams(window.location.search);
+  const productParam = params.get('product');
+  const focusParam = params.get('focus');
+  const sourceField = document.getElementById('enquirySource');
+  const productField = document.getElementById('product');
+  const destinationField = document.getElementById('destination');
+
+  if (sourceField) {
+    sourceField.value = document.referrer || window.location.href;
+  }
+
+  if (productParam && productField) {
+    const matchingOption = Array.from(productField.options)
+      .find(option => option.text.trim().toLowerCase() === productParam.trim().toLowerCase());
+
+    if (matchingOption) {
+      productField.value = matchingOption.value;
+    } else {
+      productField.value = 'Other Product';
+      const additional = document.getElementById('additional');
+      if (additional && !additional.value) {
+        additional.value = 'Product required: ' + productParam;
+      }
+    }
+  }
+
+  if (focusParam === 'destination' && destinationField) {
+    setTimeout(() => destinationField.focus(), 250);
+  }
+
   if (rfqForm) {
     rfqForm.addEventListener('submit', function (event) {
       event.preventDefault();
+
       if (!rfqForm.reportValidity()) return;
+
       formStatus.style.display = 'block';
       formStatus.scrollIntoView({ behavior: 'smooth', block: 'center' });
     });
