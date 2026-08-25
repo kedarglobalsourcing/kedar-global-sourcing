@@ -1,7 +1,7 @@
 # Kedar Global Sourcing Website
 
 Static website for Kedar Global Sourcing.
-
+Backend storage configured: D1 + R2
 ## Files
 - `index.html` — complete single-page website
 - `assets/kedar-logo.png` — approved logo artwork
